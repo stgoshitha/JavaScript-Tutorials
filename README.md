@@ -7,7 +7,6 @@ Welcome to **JavaScript Tutorials**, a comprehensive learning hub designed to he
 This repository provides an interactive interface and structured learning modules to guide users through core JavaScript topics. Whether you're a beginner or looking to enhance your skills, this project has you covered.
 
 ![Alt Text](images/home.png)
-<img src="images/home.png" alt="Alt Text" width="500">
 
 ## Features
 
