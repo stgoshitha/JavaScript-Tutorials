@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Object Model</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+      background-color: antiquewhite;
+      height: 100vh;
+    }
+    #container_main{
+      justify-content: center;
+      align-content: center;
+      width: var(100%-10px);
+      background-color: aliceblue;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 5px #ddb7a1;
+    }
+
+    #container_main h1{
+      color: #FF5C00;
+    }
+
+    #container_main p{
+      color: gray;
+      font-size: 20px;
+      font-style: italic;
+    }
+    
+    #back{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px; 
+      flex-direction: column;
+      gap:10px
+    }
+
+    #back_sub{
+      display: flex;
+      gap: 20px;
+      width: 50%;
+    }
+
+    #btn_forword{
+      width: 100%;
+      margin-top: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-inline: 20px;
+      background-color: #388E3C;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    #btn_forword:hover{
+      width: 100%;
+      margin-top: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-inline: 20px;
+      background-color: #4CAF50 ;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    #btn_backword{
+      width: 100%;
+      margin-top: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-inline: 20px;
+      background-color: #388E3C;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    #btn_forword:hover{
+      width: 100%;
+      margin-top: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-inline: 20px;
+      background-color: #4CAF50 ;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .footer {
+    background: #f85606;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    margin-top: 30px;
+    margin-bottom:auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="container_main">
+    <h1 class="topic">Document Object Model</h1>
+    <p>-- Open the <code>dom.html</code> file to view the code.</p>
+    <p>-- Open the <b>Console</b>in your browser's Developer Tools to view the output.</p>
+  </div>
+
+  <!-- (1) -->
+  <div>
+    <p id="massage">JavaScript DOM</p>
+  </div>
+
+  <hr>
+ <!-- (2) -->
+  <input type = "radio" name="language" value="Js">
+  <input type = "radio" name="language" vlaue="Python">
+
+  <hr>
+  <!-- (3) -->
+  <div>
+    <h1>First heading</h1>
+    <h1>Second heading</h1>
+    <h1>Third heading</h1>
+    <h1>Fourth heading</h1>
+  </div>
+
+  <hr>
+  <!-- (4) -->
+  <div>
+    <h1 class="massage">First heading</h1>
+    <h1 class="massage">Second heading</h1>
+    <h1 class="massage">Third heading</h1>
+  </div>
+
+  <hr>
+  <!-- (5) -->
+  <div>
+    <h1 class="massage">First heading</h1>
+    <div id="container">
+      <h1 class="massage">Second heading</h1>
+      <h1 class="massage">Third heading</h1>
+    </div>
+  </div>
+
+  <hr>
+  <!-- (6) -->
+  <div>
+    <h1 class="massage1">First heading 23</h1>
+    <div id="container1">
+      <h1 class="massage1">Second heading 23</h1>
+      <h1 class="massage1">Third heading 23</h1>
+    </div>
+  </div>
+
+  <hr>
+  <!-- (7) -->
+  <div>
+    <h1 class="massage1">First heading 23</h1>
+    <div class="container1">
+      <h1 class="massage1">Second heading 23</h1>
+      <h1 class="massage1">Third heading 23</h1>
+    </div>
+  </div>
+
+  
+  <hr>
+  <!-- (8) -->
+  <div>
+    <h1 class="massage1">First heading 23</h1>
+    <div class="container1">
+      <h2 class="massage1">Second heading 23</h2>
+      <h2 class="massage1">Third heading 23</h2>
+      <h3 class="massage1">Fourth heading 23</h3>
+    </div>
+  </div>
+
+  <hr>
+  <!-- (9) -->
+   <div class="title">
+    <p class="text">Welcome to My website</p>
+   </div>
+
+  <hr>
+  <!-- (10) -->
+  <div class="title1"><p>Welcome to My website 1</p>
+    <p>Welcome to My website 2</p>
+    <p>Welcome to My website 3</p>
+    <p>Welcome to My website 4</p>
+   </div>
+
+  <hr>
+  <!-- (12) -->
+  <div class="title2"><p>Welcome to My website 1</p><p>Welcome to My website 2</p><p>Welcome to My website 3</p><p>Welcome to My website 4</p></div>
+
+  <hr>
+  <!-- (13) -->
+  <div class="title3">
+    <p>Welcome to My website 1</p>
+    <p class="second">Welcome to My website 2</p>
+    <p>Welcome to My website 3</p>
+    <p>Welcome to My website 4</p>
+   </div>
+
+   <hr>
+   <!-- (14) -->
+    <ul id="menu">
+      <li>Home</li>
+      <li>About</li>
+      <li>Blog</li>
+      <li style="display: none;">Project</li>
+    </ul>
+
+
+    <!--navigation buttons-->
+    <div id="back">
+      <div id="back_sub">
+        <button id="btn_backword"><i class="fa-solid fa-angles-left"></i> Go Backword </button>
+        <button id="btn_forword">Go Forword <i class="fa-solid fa-angles-right"></i></button>
+      </div>
+    </div>
+
+    <!--footer section-->
+    <footer class="footer">
+      <p>© 2024 JavaScript Learning Hub | Goshitha Premachandra</p>
+    </footer>
+
+
+
+  <script>
+    //Document Object Model - DOM
+
+    //DOM is an application programming interface(API) for manipulating HTML documents.
+
+    //DOM provides functions that allow you to add, remove, and modify parts of the document effectively.
+
+    //The DOM represents an HTML document as a tree of nodes.
+
+    //Selecting Element
+    /* 
+    (1) getElementById() -- the getElementsById() method return an element object that represents an HTML element
+
+    (2) getElementsByName()
+
+    (3) getElementsByTagName() -- the getElementByTagName() method accepts a tag name and return a live HTML Collection of the melement
+
+    (4) getElementsByClassName() -- the getElementByClassName() method return an array-like of object of the child element with a specified class name.
+
+    (5)querySelector() -- quarySelector() method allows you to select the first element that matches one or more CSS selectors.
+
+    (6)querySelectorAll() -- quarySelectorAll() method allows you to select all element that matches one or more CSS selectors.
+
+    */
+
+    // (1)
+    let msg = document.getElementById("massage");
+    console.log(msg);
+
+    // (2)
+    let btn = document.getElementsByName("language")
+    console.log(btn)
+
+    // (3)
+    let heading = document.getElementsByTagName("h1");
+    console.log(heading); 
+
+    // (4)
+    let msg1 = document.getElementsByClassName("massage");
+    console.log(msg1);
+
+    // (5)
+    let cont = document.getElementById("container");
+    let msg2 = cont.getElementsByClassName("massage")
+    console.log(msg2);
+
+    // (6)
+    let msg3 = document.querySelector(".massage1")
+    console.log(msg3);
+
+    let msg4 = document.querySelectorAll(".massage1")
+    console.log(msg4);
+
+    // (7)
+    let cont1 = document.getElementById("container1");
+    let msg5 = cont1.querySelectorAll(".massage1")
+    console.log(msg5);
+
+    // (8)
+    let massage1 = document.querySelectorAll("#container1");
+    let massage2 = document.querySelectorAll("div");
+    let massage3 = document.querySelectorAll("h1");
+    let massage4 = document.querySelectorAll("div h2");
+    let massage5 = document.querySelectorAll("h2,h3");
+
+    console.log(massage1);
+    console.log(massage2);
+    console.log(massage3);
+    console.log(massage4);
+    console.log(massage5);
+
+    // (9)
+
+    let txt = document.querySelector(".text");
+    console.log(txt.parentNode);
+
+    //(10)
+    let parent = document.querySelector(".title1");
+    console.log(parent.firstChild);
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild);
+    console.log(parent.childNodes);
+
+     //(11)
+    let parent1 = document.querySelector(".title2");
+    console.log(parent1.childNodes);
+
+    //(12)
+    let second = document.querySelector(".second");
+    console.log(second.previousElementSibling);
+    console.log(second.nextElementSibling);
+
+    //(13) How to manipulate Element
+    
+    //createElement() method
+
+    //To create an HTML element, we use the createElement() method.
+
+    //The document.createElement() accepts an HTML tag name and returns a new Node with the Element type.
+
+   let div = document.createElement("div");
+   div.innerHTML = "<p>Welcome to my website -- manipulate Element</p>";
+
+   div.id = "addId";
+   div.className = "addClass";
+   
+   document.body.appendChild(div);
+
+   console.log(div);
+
+
+   //appendChild() method
+   //Use appendChild() method to add a node to end of the list of child nodes of a specified parent node
+   //The appendChild() can be used to move an existing child node to the new position within the document.
+
+   let menu = document.getElementById("menu");
+
+   let list = document.createElement("li");
+   list.innerHTML = "Contact";
+
+   menu.appendChild(list);
+
+   //Text Content
+   //To get the text content of a node and its descendants, you use the textContent property.
+
+   console.log(menu.textContent);//display all text inside that element
+   console.log(menu.innerText); //only display visiable text
+
+   //menu.textContent = "Hello!" // chanoge the text content
+
+   //menu.innerHTML = "Hello";
+   //menu.innerHTML = "<h1>Hello</h1>"
+
+
+   //after() method
+   //we can use after() emethod to insert one or more node after
+
+   //Element.after(node)
+
+   //menu.after(node1);
+
+   //append() method
+   //parentNode.append(newNode);
+
+   //prepend() method
+   //parentNode.prepend(newNode);
+
+   //insertAdjacentHTML() method
+   //element.insertAdjacentHTML(positionName,text);
+   
+   menu.insertAdjacentHTML("beforebegin","<li>hi</li>");
+   menu.insertAdjacentHTML("beforeend","<li>hi</li>");
+
+   menu.insertAdjacentHTML("afterbegin","<li>hi</li>");
+   menu.insertAdjacentHTML("afterend","<li>hi</li>");
+
+    //replaceChild() method
+    //this method is used to replace the child element with the new one
+    //parentNode.replaceChild(newChild,oldChild);
+
+  let newItem = document.createElement("li");
+  newItem.textContent = "Hi";
+
+  // Find the child to replace
+  let oldItem = menu.children[0]; // The first <li>, i.e., "Home"
+
+  // Replace the old child with the new child
+  menu.replaceChild(newItem, oldItem);
+
+
+  //cloneNode()
+  //this method is used to clone a node and its children
+
+  //give aregument true or false(default)
+  let newNode = menu.cloneNode(true);
+  console.log(newNode);
+  console.log(newNode.textContent);
+
+  //removeChild() method
+
+  //parentNode.removeChild(childNode);
+
+  menu.removeChild(menu.firstElementChild); // remove Hi
+
+  //insertBefore() method
+  //Use insertBefore() method to insert a new node before an existing node as a child node of a parent node.
+
+  //parentNode.insertBefore(newNode,refNode);
+  let newNode1 = document.createElement("li")
+  newNode1.textContent = "insertBefore() method";
+
+  menu.insertBefore(newNode1,menu.firstElementChild);
+
+  const btn_backword = document.getElementById("btn_backword");
+  const btn_forword = document.getElementById("btn_forword");
+
+  btn_backword.addEventListener("click", function () {
+    window.location.href = "index.html";
+  });
+
+  btn_forword.addEventListener("click", function () {
+    window.location.href = "attribute-method.html";
+  });
+
+  </script>
+</body>
+</html>

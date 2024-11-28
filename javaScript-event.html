@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Event</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+      background-color: antiquewhite;
+      height: 100vh;
+    }
+    #container_main{
+      justify-content: center;
+      align-content: center;
+      width: var(100%-10px);
+      background-color: aliceblue;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 5px #ddb7a1;
+    }
+
+    #container_main h1{
+      color: #FF5C00;
+    }
+
+    #container_main p{
+      color: gray;
+      font-size: 20px;
+      font-style: italic;
+    }
+
+    #container_sub {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    gap: 10px;
+    }
+
+    #container_sub button{
+      width: 90%;
+      margin-top: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-inline: 20px;
+      background-color: white;
+      color: #FF5C00;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 5px;
+      border: 1px solid #FF5C00;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    #container_sub button:hover{
+      margin-top: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-inline: 20px;
+      background-color: #f85606;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 5px;
+      border: 1px solid #f85606 ;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px #2A2A2A
+    }
+
+    #back{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px; 
+      flex-direction: column;
+    }
+
+    #btn_backword{
+      width: 50%;
+      margin-top: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-inline: 20px;
+      background-color: #388E3C;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    #btn_backword:hover{
+      width: 50%;
+      margin-top: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-inline: 20px;
+      background-color: #4CAF50 ;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    #btn_back{
+      width: 50%;
+      margin-top: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-inline: 20px;
+      background-color: #606060 ;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    #btn_back:hover{
+      width: 50%;
+      margin-top: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-inline: 20px;
+      background-color: #808080 ;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .footer {
+    background: #f85606;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container_main">
+    <h1>JavaScript Event</h1>
+    <p>-- Open the <code>javaScript-event.html</code> file to view the code.</p>
+<p>-- Open the <strong>Console</strong> tab in your browser’s Developer Tools to see the output.</p>
+
+  </div>
+
+  <div id="container_sub">
+    
+    <button type="button" onclick="console.log('click event')">Click Here - click event</button>
+    
+    <button type="button" onclick="displayMassage()">Click Here - click event using function</button>
+    
+    <button type="button" onclick="console.log(event)">Click Here - Event object</button>
+    
+    <button type="button" onclick="console.log(event.type)">Click Here - Event object type</button>
+
+    <button type="button" onclick="console.log(event.target)">Click Here - Event object target</button>
+
+    <button id="btn" type="button" onclick="console.log(this.id)">Click Here - use "this"</button>
+    <button id="btn" type="button" onclick="console.log(id)">Click Here - not use "this"</button>
+
+    <button id="btn1">Click Here - use JavaScript</button>
+    <button id="btn2">Click Here - use JavaScript - null</button>
+
+    <button id="btn3">Click Here - use JavaScript - addEventListener - internal function</button>
+    <button id="btn4">Click Here - use JavaScript - addEventListener - external function</button>
+
+    <button id="btn5">Click Here - use JavaScript - removeEventListener</button>
+
+  </div>
+
+  <!--navigation buttons-->
+  <div id="back">
+    <button id="btn_backword"><i class="fa-solid fa-angles-left"></i> Go Backword </button>
+    <button id="btn_back">Go Home Page</button>
+  </div>
+
+  <!--footer section-->
+  <footer class="footer">
+    <p>© 2024 JavaScript Learning Hub | Goshitha Premachandra</p>
+  </footer>
+
+  <script>
+    //Two type of event model
+
+    //(1) Event bubbling 
+    //Event start at the most specific element and flows towards least specific element
+
+    // (2) Event capturing
+    //Event start at the least specific element and flows towards most specific element
+
+    //Event Handler
+    //an event handler is a piece of code that will be executed when the event occurs.
+
+    //how to add event handler
+    //(1)HTML event handler attribute
+    //click event-> onClick
+    function displayMassage(){
+      console.log('click event from function');
+    }
+    //target -> get the target elment on which the event occurs.
+
+    //"this" keyword inside the event handler refer to target element.
+
+
+    //(2)Adding event handler name in JavaScript
+    let btn = document.getElementById("btn1");
+    btn.onclick = function(){
+      console.log("click event using JavaScript");
+      //console.log(id); -- error
+      console.log(this);
+      console.log(this.id);
+    }
+
+    //assign the null in this handler it will remove the event handler.
+    let btn2 = document.getElementById("btn2");
+    btn2.onclick = null;
+
+    //addEventListener() --> this method will register an event handler. 
+    //removeEvenetListener() --> this method will remove an event handler.
+    //These are two methods that handles the event 
+
+    // addEventListener(event, function, useCapture); 
+    //useCapture is optional --> true or false(default);
+    let btn3 = document.getElementById("btn3");
+
+
+    btn3.addEventListener('click', function(event){
+      console.log('click event using addEventListener - internal');
+      console.log("Event type : "+event.type);
+    })
+
+    let btn4 = document.getElementById("btn4");
+
+    function displayMsg(){
+      console.log('click event using addEventListener - external');
+    }
+
+    btn4.addEventListener('click', displayMsg);
+
+    let btn5 = document.getElementById("btn5");
+
+    function display(){
+      console.log('click event using addEventListener and remove');
+    }
+
+    btn5.addEventListener('click' , display);
+    //remove the event handler
+    btn5.removeEventListener('click', display);
+
+    //type of events
+
+    //(1) mousemove --> this event fires repeatedly when you move the mouse cursor around the element.
+
+    //(2) mousedown --> this event fires when you press the mouse button on the element.
+
+    //(3) mouseup --> this event fires when you release the mouse button on the element.
+
+    //(4) mouseover --> this event fires when the cursor move from outside to inside the boundaries of the element.
+
+    //(5) mouseout --> this event fires when the cursor is over an element and then move to another element.
+
+    //(6) keydown --> this event fires when you press a key on the keyboard and fires repeatedly while you are holding down the key.
+
+    //(7) keyup --> this event fires when you release a key on the keyboard.
+
+    //(8) keypress --> this event fires when you press a character on keyboard like a,b,c,.... It fires repeatedly while you hold down the key on the keyboard.
+
+    //(2) Scroll --> this event fires when you scroll a document or and element, the scroll events fire
+
+    const btnBack = document.getElementById("btn_back");
+    const btn_backword = document.getElementById("btn_backword");
+    
+
+    btn_backword.addEventListener("click", function () {
+      window.location.href = "attribute-method.html";
+    });
+
+    btnBack.addEventListener("click", function () {
+      window.location.href = "index.html";
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Cover Page</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <h1>Welcome to JavaScript</h1>
+      <p>Unleash the power of interactivity and creativity!</p>
+      <button class="cta-btn" id="git">GitHub Link</button>
+    </div>
+    <div class="header-image">
+      <img src="/images/logo.jpg" alt="JavaScript Illustration">
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="info-section">
+      <h2>Why Learn JavaScript?</h2>
+      <p>JavaScript is a versatile language used for creating dynamic and responsive websites. With it, you can enhance user interactions, build web apps, and much more.</p>
+      <button class="learn-btn" id="btn_learn">Start Your Learning Journey</button>
+    </section>
+
+
+    <section class="card-section" id="card-section">
+      
+      <div class="cards">
+        <div id="container_main">
+          <p>-- Uncomment each <code>&lt;script&gt;</code> tag one by one in the <strong>index.html</strong> file to load the corresponding JavaScript file and check the output in the browser's console.</p>
+        </div>
+      </div>
+
+      <h2>Core Topics</h2>
+
+      <div class="cards">
+        <div class="card" onclick="alert('Please open the following files:\n- script.js')">
+          <h3>Introduction of JavaScript</h3>
+          <p>Understand how to store and manipulate data efficiently.</p>
+        </div>
+
+        <div class="card" onclick="alert('Please open the following files:\n- variable.js\n- datatypes.js')">
+          <h3>Basics of JavaScript</h3>
+          <p>Learn the foundations of JavaScript, including variables and data types.</p>
+        </div>
+        
+        <div class="card" onclick="alert('Please open the following files:\n- operators.js')">
+          <h3>Operators</h3>
+          <p>Discover how to perform calculations and compare values in JavaScript.</p>
+        </div>
+        
+        <div class="card" onclick="alert('Please open the following files:\n- conditional-statements.js \n- loop.js')">
+          <h3>Control Flow Statements</h3>
+          <p>Explore how to make decisions and repeat actions using conditions and loops.</p>
+        </div>
+        
+        <div class="card" onclick="alert('Please open the following files:\n- function.js')">
+            <h3>Functions</h3>
+            <p>Understand how to create reusable blocks of code for better programming.</p>
+        </div>
+        
+        <div class="card" onclick="alert('Please open the following files:\n- object.js')">
+            <h3>Objects</h3>
+            <p>Learn how to organize and store data using JavaScript objects.</p>
+        </div>
+        
+        <div class="card" onclick="alert('Please open the following files:\n- classes.js')">
+          <h3>Classes</h3>
+          <p>Master advanced object-oriented programming with JavaScript classes.</p>
+        </div>
+        
+        <div class="card" id="cardDOM">
+          <h3>DOM</h3>
+          <p>Learn how to create reusable code blocks.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!--footer section-->
+  <footer class="footer">
+    <p>© 2024 JavaScript Learning Hub | Goshitha Premachandra</p>
+  </footer>
+
+
+  <script>
+    alert("Welcome to my website\n\n-- Goshitha premachandra");
+
+    let cardDOM = document.getElementById("cardDOM");
+    let learn_btn = document.getElementById("btn_learn");
+    let git = document.getElementById("git");
+
+    cardDOM.addEventListener("click", function () {
+      window.location.href = "dom.html"; 
+    });
+
+    git.addEventListener("click", function () {
+      window.open("https://github.com/stgoshitha", "_blank") 
+    });
+
+    learn_btn.addEventListener("click", function () {
+      let cardSection = document.getElementById("card-section");
+      cardSection.scrollIntoView({ behavior: "smooth" });  
+    });
+  </script>
+
+
+  <!--
+
+  <script src="/js/script.js"></script>
+  <script src="/js/variables.js"></script>
+  <script src="/js/datatypes.js"></script>
+  <script src="/js/operators.js"></script>
+  <script src="/js/conditional-statements.js"></script>
+  <script src="/js/loops.js"></script> 
+  <script src="/js/function.js"></script>
+  <script src="/js/objects.js"></script>
+  <script src="/js/classes.js"></script>
+  
+   -->
+</body>
+</html>
+
+
+  
+
+
+
+

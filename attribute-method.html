@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Attribute Method</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    body {
+      margin: 0;
+      background-color: antiquewhite;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      
+    }
+
+    .container{
+      padding: 10px;
+    }
+
+    #container_main{
+      justify-content: center;
+      align-content: center;
+      width: var(100%-10px);
+      background-color: aliceblue;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 5px #ddb7a1;
+    }
+
+    #container_main h1{
+      color: #FF5C00;
+    }
+
+    #container_main p{
+      color: gray;
+      font-size: 20px;
+      font-style: italic;
+    }
+
+    .container_sub {
+      padding: 20px;
+      max-width: 800px;
+    }
+
+    input[type="text"] {
+      background-color: black;
+      font-size: 1rem;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 15px;
+    }
+
+    #fname {
+      background-color: blueviolet;
+      color: yellow;
+    }
+
+    #fname::placeholder {
+      color: white;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      
+    }
+
+    .topic{
+      color: #f85606;
+      font-size: 36px;
+      margin-bottom: 50px;
+    }
+
+    #back{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px; 
+      flex-direction: column;
+      gap:10px
+    }
+
+    #back_sub{
+      display: flex;
+      gap: 20px;
+      width: 50%;
+    }
+
+    #btn_forword{
+      width: 100%;
+      margin-top: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-inline: 20px;
+      background-color: #388E3C;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    #btn_forword:hover{
+      width: 100%;
+      margin-top: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-inline: 20px;
+      background-color: #4CAF50 ;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    #btn_backword{
+      width: 100%;
+      margin-top: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-inline: 20px;
+      background-color: #388E3C;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    #btn_backword:hover{
+      width: 100%;
+      margin-top: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-inline: 20px;
+      background-color: #4CAF50 ;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .footer {
+      background: #f85606;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      border-radius: 12px 12px 0 0;
+      margin-top: 30px;
+      width: calc(100%-10px);
+      margin-bottom:auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+  <div id="container_main">
+    <h1 class="topic">JavaScript Attribute Method</h1>
+    <p>-- Open the <code>attribute-method.html</code> file to view the code.</p>
+    <p>-- Open the <b>Console</b> and <b>Elements</b> tabs in your browser's Developer Tools to view the output.</p>
+  </div>
+
+  <div class="container_sub">
+
+    use getAttribute() method
+    <input type="text" id="username" placeholder="Username">
+    use
+    <input type="text" id="password" placeholder="Password">
+    use
+    <input type="text" id="conPassword" placeholder="Confirm Password">
+    use
+    <input type="text" id="fname" placeholder="First Name">
+
+  
+    <h1 id="title1" class="main massage">Class Property 1</h1>
+    <h1 id="title2" class="main massage">Class Property 2</h1>
+    <h1 id="title3" class="main massage">Class List</h1>
+    <h1 id="title4" class="main massage">Class List - Remove Class</h1>
+    <h1 id="title5" class="main massage">Class List - Replace Class</h1>
+    <h1 id="title6" class="main massage">Class List - Toggle</h1>
+
+  </div>
+</div>
+
+<!--navigation buttons-->
+<div id="back">
+  <div id="back_sub">
+    <button id="btn_backword"><i class="fa-solid fa-angles-left"></i> Go Backword </button>
+    <button id="btn_forword">Go Forword <i class="fa-solid fa-angles-right"></i></button>
+  </div>
+</div>
+
+<!--footer section-->
+<footer class="footer">
+  <p>© 2024 JavaScript Learning Hub | Goshitha Premachandra</p>
+</footer>
+
+  <script>
+    let inputBox = document.getElementById("username");
+    console.log(inputBox.attributes);
+
+    // getAttribute() method
+    console.log(inputBox.getAttribute("id"));
+    console.log(inputBox.getAttribute("type"));
+    console.log(inputBox.getAttribute("placeholder"));
+
+    // setAttribute() method
+    inputBox.setAttribute("class", "username_class");
+    console.log(inputBox.getAttribute("class"));
+
+    // hasAttribute() method
+    console.log(inputBox.hasAttribute("id"));
+    console.log(inputBox.hasAttribute("disable"));
+
+    // removeAttribute() method
+    inputBox.removeAttribute("class");
+
+    // Manipulating Element's Styles
+    inputBox.style.borderRadius = "10px";
+    inputBox.style.marginBottom = "15px";
+
+    // cssText
+    let password = document.getElementById("password");
+    password.style.cssText = "width: 100%; padding: 10px; border-radius: 5px;";
+
+    let conPassword = document.getElementById("conPassword");
+    conPassword.style.cssText += "width: 100%; margin-top: 10px; border-radius: 5px;";
+
+    // getComputedStyle() method
+    let fname = document.getElementById("fname");
+    console.log(window.getComputedStyle(fname).padding);
+    console.log(window.getComputedStyle(fname).backgroundColor);
+
+    // class property
+    let title1 = document.getElementById("title1");
+    title1.className = "newclass1";
+
+    let title2 = document.getElementById("title2");
+    title2.className += " newclass2";
+
+    // classList property
+    let title3 = document.getElementById("title3");
+    title3.classList.add("new1", "new2");
+
+    let title4 = document.getElementById("title4");
+    title4.classList.remove("massage");
+    title4.classList.add("new1", "new2");
+
+    let title5 = document.getElementById("title5");
+    title5.classList.replace("massage", "newMassage");
+
+    console.log(title5.classList.contains("massage"));
+
+    let title6 = document.getElementById("title6");
+    title6.classList.toggle("massage");
+    title6.classList.toggle("newMassage");
+
+    const btn_backword = document.getElementById("btn_backword");
+    const btn_forword = document.getElementById("btn_forword");
+
+    btn_backword.addEventListener("click", function () {
+      window.location.href = "dom.html";
+    });
+
+    btn_forword.addEventListener("click", function () {
+      window.location.href = "javaScript-event.html";
+    });
+  </script>
+</body>
+</html>
